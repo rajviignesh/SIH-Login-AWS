@@ -7,8 +7,10 @@
 package de.cryptiot.indoorfarming;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.widget.Toast;
+
 
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoDevice;
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser;
@@ -29,16 +31,17 @@ import static android.content.ContentValues.TAG;
 
 public class Cognito {
     // ############################################################# Information about Cognito Pool
-    private String poolID = "Place_Your_UserPoolID";
-    private String clientID = "Place_Your_ClientID";
-    private String clientSecret = "Place_Your_ClientSecret";
-    private Regions awsRegion = Regions.DEFAULT_REGION;         // Place your Region
+    private String poolID = "ap-south-1_ciWgKfpWE";
+    private String clientID = "1u3o03nivt3lpi9n8ntupp24vi";
+    private String clientSecret = "1jmmb2j04j8tg9c98uphnqpfn09ern4hiu7222grf6hd6s52lu4b";
+    private Regions awsRegion = Regions.AP_SOUTH_1;         // Place your Region
     // ############################################################# End of Information about Cognito Pool
     private CognitoUserPool userPool;
     private CognitoUserAttributes userAttributes;       // Used for adding attributes to the user
     private Context appContext;
 
-    private String userPassword;                        // Used for Login
+    private String userPassword;
+    public static String Auth = "nnxx";// Used for Login
 
     public Cognito(Context context){
         appContext = context;
@@ -97,6 +100,11 @@ public class Cognito {
         }
     };
 
+    public String getValue() //returns a value
+    {
+        return Auth;
+    }
+
     public void addAttribute(String key, String value){
         userAttributes.addAttribute(key, value);
     }
@@ -116,6 +124,9 @@ public class Cognito {
         @Override
         public void onSuccess(CognitoUserSession userSession, CognitoDevice newDevice) {
             Toast.makeText(appContext,"Sign in success", Toast.LENGTH_LONG).show();
+            Auth = "ss";
+
+
 
         }
 
@@ -141,11 +152,13 @@ public class Cognito {
         public void onFailure(Exception exception) {
             // Sign-in failed, check exception for the cause
             Toast.makeText(appContext,"Sign in Failure", Toast.LENGTH_LONG).show();
+            Auth = "nn";
         }
+
     };
 
-    public String getPoolID() {
-        return poolID;
+    public String getAuth() {
+        return Auth;
     }
 
     public void setPoolID(String poolID) {
