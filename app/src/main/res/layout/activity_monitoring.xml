@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#35393b"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="de.cryptiot.indoorfarming2.AppDashBoard2">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <LinearLayout
+            android:id="@+id/ll1"
+            android:layout_width="387dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="VIEW "
+                android:textColor="#ff9900"
+                android:textSize="15dp" />
+
+
+            <RadioGroup
+                android:id="@+id/radiogroup"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/allrate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="11dp"
+                    android:checked="true"
+                    android:textColor="#ffffff"
+                    android:buttonTint="#ffffff"
+                    android:text="All Vitals" />
+
+                <RadioButton
+                    android:id="@+id/heartrate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="11dp"
+                    android:textColor="#ffffff"
+                    android:buttonTint="#ffffff"
+                    android:text="Heart Rate" />
+
+                <RadioButton
+                    android:id="@+id/resprate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="11dp"
+                    android:textColor="#ffffff"
+                    android:buttonTint="#ffffff"
+                    android:text="Respiration Rate" />
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/radiogroup"
+                android:textColor="#ffffff"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/temp"
+                    android:layout_width="126dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:buttonTint="#ffffff"
+                    android:textColor="#ffffff"
+                    android:text="Temperature" />
+
+                <RadioButton
+                    android:id="@+id/bp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="#ffffff"
+                    android:buttonTint="#ffffff"
+                    android:text="Blood Pressure" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll2"
+            android:layout_width="384dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll1"
+            android:layout_marginTop="35dp"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="VIEW FOR"
+                android:textColor="#ff9900"
+                android:textSize="15dp" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:textColor="#ffffff"
+                android:entries="@array/Duration"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="15dp"/>
+        </LinearLayout>
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/graph"
+            android:layout_width="335dp"
+            android:layout_height="306dp"
+            android:layout_below="@+id/ll2"
+            android:layout_marginLeft="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp" />
+
+        <LinearLayout
+            android:id="@+id/ll3"
+            android:layout_width="384dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/graph"
+            android:orientation="vertical"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            >
+
+            <TextView
+                android:id="@+id/average"
+                android:textColor="#ff9900"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/graph"
+                android:text="AVERAGE"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/avg1"
+                android:layout_width="wrap_content"
+                android:layout_height="31dp"
+                android:layout_below="@id/average"
+                android:textColor="#ffffff"
+                android:layout_marginLeft="50dp" />
+
+            <TextView
+                android:id="@+id/avg2"
+                android:layout_width="wrap_content"
+                android:textColor="#ffffff"
+                android:layout_height="31dp"
+                android:layout_below="@id/avg1"
+                android:layout_marginLeft="50dp"  />
+
+            <TextView
+                android:id="@+id/avg3"
+                android:layout_width="wrap_content"
+                android:layout_height="31dp"
+                android:layout_below="@id/avg2"
+                android:textColor="#ffffff"
+                android:layout_marginLeft="50dp" />
+
+            <TextView
+                android:id="@+id/avg4"
+                android:layout_width="wrap_content"
+                android:layout_height="31dp"
+                android:layout_below="@id/avg3"
+                android:textColor="#ffffff"
+                android:layout_marginLeft="50dp" />
+
+
+            <TextView
+                android:id="@+id/avg5"
+                android:layout_width="wrap_content"
+                android:layout_height="31dp"
+                android:layout_below="@id/avg4"
+                android:textColor="#ffffff"
+                android:layout_marginLeft="50dp" />
+
+        </LinearLayout>
+        <Button
+            android:layout_below="@id/ll3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#ff9900"
+            android:text="PUSH"
+            android:id="@+id/push"/>
+
+
+    </RelativeLayout>
+</ScrollView>

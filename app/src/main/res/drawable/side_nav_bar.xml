@@ -1,0 +1,15 @@
+<!--
+  ~ Developed by Keivan Kiyanfar on 17/7/20 7:03 PM
+  ~ Last modified 17/7/20 7:03 PM
+  ~ Copyright (c) 2020. All rights reserved.
+  -->
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient
+        android:angle="135"
+        android:centerColor="#009688"
+        android:endColor="#00695C"
+        android:startColor="#4DB6AC"
+        android:type="linear" />
+</shape>
